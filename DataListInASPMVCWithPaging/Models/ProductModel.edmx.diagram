@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="df8a2b65e5e84b77ba421274feaa3fc3" Name="Diagram1" ZoomLevel="78">
+        <EntityTypeShape EntityType="AdventureWorks2012Model.Product" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2012Model.ProductPhoto" Width="1.5" PointX="6.625" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2012Model.ProductProductPhoto" Width="1.5" PointX="8.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="AdventureWorks2012Model.FK_ProductProductPhoto_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="AdventureWorks2012Model.FK_ProductProductPhoto_ProductPhoto_ProductPhotoID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

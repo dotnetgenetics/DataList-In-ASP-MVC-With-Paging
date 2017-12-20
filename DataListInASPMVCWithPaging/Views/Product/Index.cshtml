@@ -1,0 +1,35 @@
+﻿@model DataListInASPMVCWithPaging.Models.IndexModel
+@using PagedList
+@using PagedList.Mvc
+
+<h2>Product Listing</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        @Html.PagedListPager(Model.Products, page => Url.Action("Index",
+                            "Product",
+                                new RouteValueDictionary() {
+                                { "Page", page }
+                                }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+    </div>
+</div>
+<div class="row">
+    @if (Model.Products.Count > 0)
+    {
+        foreach (var item in Model.Products)
+        {
+            <div class="col-md-2 col-sm-6 col-xs-12" style="text-align:left;">
+                <div style="background-color:moccasin; padding:10px; border-radius:15px; margin-bottom:20px;">
+                    <img src="~/Helpers/ImageHandler.ashx?ProductID=@item.ProductID" style="width:50%;" />
+                    <h3>@item.ProductNumber</h3>
+                    <p>@item.ProductName</p>
+                    <p>@string.Format("{0:0,0.00}", Convert.ToDouble(item.ListPrice))</p>
+                    <div>
+                        @Html.ActionLink("Add To Cart", "", "", null, new { @class = "actionButton btn btn-xs btn-primary" })
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+</div>
